@@ -1,0 +1,44 @@
+<div class="container" id="abc" >
+<div class="row">
+<!--update menu name-->
+  <div class=" col s10 abc">
+
+                  <div class="card  red darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Cuisine Name</span>
+                      <div class="input-field">
+                            <input  id="cuisine_name" type="text" class="validate">
+                      </div>
+                    </div>
+                  </div>
+<!--add menu grp-->
+        <div class="card  red darken-1">
+          <div class="card-content white-text">
+            <form (ngSubmit)="submitMenuGroup()">
+              <div class="form-group">
+            <span class="card-title">MenuGroup</span>
+            <div class="input-field">
+              <input placeholder="Enter the Menu Groups" [(ngModel)]="model.menu_group_name" name="menu_group_name" type="text" class="form-control validate">
+
+              </div>
+              <button *ngIf="!editing" type="submit" class="btn btn-primary ">Add</button>
+              <button *ngIf="editing" type="submit" class="btn btn-warning btn-block">Update</button>
+          </div>
+        </form>
+        </div>
+        </div>
+
+
+      <div class="card card2  red darken-1">
+        <div class="card-action">
+        <ul class="collection">
+            <menuGroup-box [editId]="editId" [listId]="listId" *ngFor="let menuGroup of menuGroups" [menuGroup]="menuGroup"></menuGroup-box>
+        </ul>
+              </div>
+      </div>
+
+
+           <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+      </div>
+    </div>

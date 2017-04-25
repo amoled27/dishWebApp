@@ -1,0 +1,40 @@
+<div class="container" >
+    <div class="row">
+      <div class="col s10 abc">
+
+        <!--input part -->
+          <div class="card  red darken-1">
+            <div class="card-content white-text">
+
+              <form (ngSubmit)="submitMenu()">
+                <div class="form-group">
+              <span class="card-title">Menus</span>
+              <div class="input-group">
+              <input placeholder="Enter the type of cuisine..." [(ngModel)]="model.menu_name" name="menu_name" type="text" class="form-control validate">
+              <input placeholder="describe..." [(ngModel)]="model.menu_description" name="menu_description" type="text" class="form-control validate">
+              <button *ngIf="!editing" type="submit" class="btn btn-primary ">Add</button>
+              <button *ngIf="editing" type="submit" class="btn btn-warning btn-block">Update</button>
+              </div>
+              </div>
+              </form>
+
+            </div>
+        </div>
+
+
+        <!--list part-->
+    <div class="card card2  red darken-1">
+      <div class="card-action">
+      <ul class="collection">
+
+    <menu-box [editId]="editId" [listId]="listId" *ngFor="let menu of menus" [menu]="menu"></menu-box>
+
+      </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+

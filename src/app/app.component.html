@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<header>
+      <nav class="top-nav">
+        <div class="nav-wrapper">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+      </nav>
+      <ul style="width:300px; margin-top:65px;" class="side-nav fixed">
+
+        <li>  <a [routerLink]="['/main/dashboard']" routerLinkActive="active" (click)="layout.close()" class="collection-item">Dashboard</a></li>
+        <li>  <a [routerLink]="['/main/menu']" routerLinkActive="active" (click)="layout.close()" class="collection-item">Menu Management</a></li>
+
+        <li>  <a [routerLink]="['/restaurant']" routerLinkActive="active" class="collection-item">Restaurant Profile</a></li>
+
+        <li>  <a [routerLink]="['/main/menu-list']" routerLinkActive="active" class="collection-item">Menus Overview</a></li>
+        <li>  <a [routerLink]="['/main/dishes-list']" routerLinkActive="active" class="collection-item">Dishes Overview</a></li>
+      </ul>
+</header>
+<router-outlet></router-outlet>
